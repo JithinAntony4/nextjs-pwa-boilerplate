@@ -8,8 +8,8 @@
   <img src="https://img.shields.io/github/repo-size/JithinAntony4/nextjs-pwa-boilerplate" alt="Repo Size">
   <img src="https://img.shields.io/opencollective/backers/redgoral" alt="Backers on Open Collective">
   <img src="https://img.shields.io/opencollective/sponsors/redgoral" alt="Sponsors on Open Collective">
-  <img src="https://img.shields.io/github/commit-activity/m/badges/JithinAntony4/nextjs-pwa-boilerplate" alt="Activity">
-  <img src="https://img.shields.io/circleci/project/github/badges/JithinAntony4/nextjs-pwa-boilerplate/master" alt="Build Status">
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/JithinAntony4/nextjs-pwa-boilerplate">
+  <img src="https://ci.appveyor.com/api/projects/status/0nha6po02d1i5fjn?svg=true" alt="Build Status">
   <img src="https://img.shields.io/github/contributors/JithinAntony4/nextjs-pwa-boilerplate" alt="GitHub contributors">
   <img src="https://img.shields.io/github/stars/JithinAntony4/nextjs-pwa-boilerplate?style=social" alt="GitHub stars">
   <img src="https://img.shields.io/github/forks/JithinAntony4/nextjs-pwa-boilerplate?style=social" alt="GitHub forks">
