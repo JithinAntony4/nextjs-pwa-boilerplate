@@ -3,6 +3,7 @@
 <br />
 
 <div align="center"><strong>Start your NextJS PWA project in seconds.</strong></div>
+<br>
 <div align="center">
   <img src="https://img.shields.io/david/JithinAntony4/nextjs-pwa-boilerplate" alt="Dependency Status">  
   <img src="https://img.shields.io/github/repo-size/JithinAntony4/nextjs-pwa-boilerplate" alt="Repo Size">
