@@ -1,19 +1,15 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import {TokenPayload} from "google-auth-library/build/src/auth/loginticket";
 import {getSession} from "../../../lib/iron";
+import {initFirebaseAdmin} from "../../../lib/firebase-admin";
 
 const admin = require("firebase-admin");
-const serviceAccount = require("../../../firebase/firebase-config.json");
 
 export default async function checkUserFCM(req: NextApiRequest, res: NextApiResponse) {
     try {
         const session: TokenPayload = await getSession(req)
         let email = session ? session.email : "";
-        if (!admin.apps.length) {
-            admin.initializeApp({
-                credential: admin.credential.cert(serviceAccount)
-            });
-        }
+        await initFirebaseAdmin();
         const db = admin.firestore();
         let snapshot = await db.collection("Users").where('email', '==', email)
             .where('fcmToken', '!=', "").get();

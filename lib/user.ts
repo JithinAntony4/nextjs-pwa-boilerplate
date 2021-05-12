@@ -1,8 +1,8 @@
 import {TokenPayload} from "google-auth-library/build/src/auth/loginticket";
 import {OAuth2Client} from 'google-auth-library';
+import {initFirebaseAdmin} from "./firebase-admin";
 
 const admin = require("firebase-admin");
-const serviceAccount = require("../firebase/firebase-config.json");
 
 let client = new OAuth2Client(process.env.GOOGLE_AUTH_CLIENT_ID);
 
@@ -23,11 +23,7 @@ export async function findGoogleUser(tokenId): Promise<TokenPayload> {
         audience: process.env.GOOGLE_AUTH_CLIENT_ID,
     });
     let payload = ticket.getPayload();
-    if (!admin.apps.length) {
-        admin.initializeApp({
-            credential: admin.credential.cert(serviceAccount)
-        });
-    }
+    await initFirebaseAdmin();
     const db = admin.firestore();
     let snapshot = await db.collection("Users").where('email', '==', payload.email).get();
     if (snapshot.empty) {

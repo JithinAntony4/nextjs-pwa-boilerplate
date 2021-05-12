@@ -61,9 +61,7 @@ Download Firebase Admin SDK Config:
 
 `Goto Firebase Console -> Project Settings -> Service accounts -> Firebase Admin SDK`
 
-Click **Generate new private key**, then copy that file & paste here: 
-`%YOUR_PROJECT_FOLDER% -> firebase -> firebase-config.json`
-*(rename your file as `firebase-config.json`)*
+Click **Generate new private key**, then copy that values and paste into `.env`
 
 Create & Configure `.env`:
 ``` dotenv
