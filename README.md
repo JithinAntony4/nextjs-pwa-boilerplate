@@ -1,4 +1,4 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/800px-Nextjs-logo.svg.png" alt="NextJS-PWA-Boilerplate Banner" align="center" />
+<img src="https://raw.githubusercontent.com/JithinAntony4/nextjs-pwa-boilerplate/main/public/examples/images/NextJS-PWA-Boilerplate-Banner.png" alt="NextJS-PWA-Boilerplate Banner" align="center" />
 
 <br />
 
