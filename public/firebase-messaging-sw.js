@@ -7,13 +7,13 @@ importScripts('https://www.gstatic.com/firebasejs/8.5.0/firebase-messaging.js');
 
 if (!firebase.apps.length) {
     firebase.initializeApp({
-        apiKey: "your_project_apiKey",
-        authDomain: "your_project_authDomain",
-        projectId: "your_project_projectId",
-        storageBucket: "your_project_storageBucket",
-        messagingSenderId: "your_project_messagingSenderId",
-        appId: "your_project_appId",
-        measurementId: "your_project_measurementId"
+        apiKey: "AIzaSyDe2oLkWcbWuqqWGKSqqcaduc0O9W-3m-k",
+        authDomain: "vaccine-booking.firebaseapp.com",
+        projectId: "vaccine-booking",
+        storageBucket: "vaccine-booking.appspot.com",
+        messagingSenderId: "654614858619",
+        appId: "1:654614858619:web:dc43cf94cf64454ba7cbde",
+        measurementId: "G-WVSWNT194M"
     });
 }
 firebase.messaging();
