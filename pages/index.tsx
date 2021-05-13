@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
     AppBar,
     Container,
@@ -12,15 +12,16 @@ import {
     Typography
 } from "@material-ui/core";
 import {useRouter} from "next/router";
-import {useUser} from "../lib/hooks";
+import {useFCMToken, useUser} from "../lib/hooks";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import theme from "../src/theme";
 import GoogleLoginForm from "../components/auth/GoogleLoginForm";
 import GoogleLogoutForm from "../components/auth/GoogleLogoutForm";
 import CloseIcon from '@material-ui/icons/Close';
 import {GetServerSideProps} from "next";
+import {initFCM} from "../lib/fcmUtils";
 
-export default function Home({googleauthclientid}) {
+export default function Home({googleauthclientid, options}) {
     let router = useRouter();
     let user = useUser();
 
@@ -30,6 +31,32 @@ export default function Home({googleauthclientid}) {
     function logout() {
         router.push(`/api/logout`);
     }
+
+    let fcmToken = useFCMToken();
+
+    async function saveFCMToken(token) {
+        try {
+            await fetch(`/api/fcm/update`, {
+                method: "PATCH",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'accept': 'application/json',
+                },
+                body: JSON.stringify({
+                    fcmToken: token,
+                })
+            })
+        } catch (e) {
+            //console.log(e.message)
+        }
+    }
+
+    useEffect(() => {
+        if (!user) return;
+        if (fcmToken) return;
+        initFCM(saveFCMToken, () => {
+        }, options)
+    }, [user, fcmToken])
 
     async function onGoogleLoginSuccess(response) {
         try {
@@ -133,9 +160,19 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     let googleauthclientid = process.env.GOOGLE_AUTH_CLIENT_ID;
+    let options = {
+        apiKey: process.env.PUBLIC_FIREBASE_API_KEY,
+        authDomain: process.env.PUBLIC_FIREBASE_AUTH_DOMAIN,
+        projectId: process.env.PUBLIC_FIREBASE_PROJECT_ID,
+        storageBucket: process.env.PUBLIC_FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: process.env.PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+        appId: process.env.PUBLIC_FIREBASE_APP_ID,
+        measurementId: process.env.PUBLIC_FIREBASE_MESUREMENT_ID
+    };
     return {
         props: {
-            googleauthclientid: googleauthclientid
+            googleauthclientid: googleauthclientid,
+            options: options
         }, // will be passed to the page component as props
     }
 }
