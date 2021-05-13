@@ -56,6 +56,7 @@ Add Firebase to your web app:
 
 `Goto Firebase Console -> Project Settings -> General -> your apps`, Click **Add App** 
 and download the config which will used in this project.
+And update `public/firebase-messaging-sw.js` with these credentials.
 
 Download Firebase Admin SDK Config:
 
