@@ -148,4 +148,4 @@ Thanks to the following people who have contributed to this project:
 * [swr](https://www.npmjs.com/package/swr)
 * [react-google-login](https://www.npmjs.com/package/react-google-login)
 ## License
-This project is licensed under the MIT license, Copyright (c) 2021 [Jithin Antony](https://jithin.co/). For more information see LICENSE.md. 
+This project is licensed under the MIT license, Copyright (c) 2021 [Jithin Antony](https://jithin.co/). For more information see LICENSE.md.
