@@ -22,7 +22,7 @@
   <sub>Created by <a href="https://twitter.com/jithinantony333">Jithin Antony</a> and maintained with ❤.</sub>
 </div>
 
-
+ 
 ## Features
 * Material UI
 * Firebase Cloud Messaging (with Push Notification)
