@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/JithinAntony4/nextjs-pwa-boilerplate/main/public/examples/images/NextJS-PWA-Boilerplate-Banner.png" alt="NextJS-PWA-Boilerplate Banner" align="center" />
 
-<br />
+<br /> 
 
 <div align="center"><strong>Start your NextJS PWA project in seconds.</strong></div>
 <br>
