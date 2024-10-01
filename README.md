@@ -2,7 +2,6 @@
 
 <br />
 
-
 <div align="center"><strong>Start your NextJS PWA project in seconds.</strong></div>
 <br>
 <div align="center">
