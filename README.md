@@ -126,7 +126,7 @@ To contribute to NextJS-PWA-Boilerplate, follow these steps:
 
 Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 ## Contributors
-
+ 
 Thanks to the following people who have contributed to this project:
 
 * [@JithinAntony4](https://github.com/JithinAntony4) 💻 📖 🎨
